@@ -10,7 +10,7 @@ public class Client {
     private Scanner reader = new Scanner(System.in);
 
     private String getServerAddress() {
-        System.out.println("Give the IP of server");
+        System.out.println("Give the IP of server :");
         return reader.next();
     }
 
@@ -38,8 +38,9 @@ public class Client {
             if (line != null) {
                 if (line.startsWith("SEND"))
                     System.out.println(line.substring(5));
-                else if (line.equals("WAIT_INPUT"))
+                else if (line.equals("WAIT_INPUT")) {
                     out.println(reader.next());
+                }
                 else if (line.equals("NEW_LINE"))
                     System.out.println();
                 else if (line.equals("CLEAR"))
@@ -56,7 +57,8 @@ public class Client {
                     System.out.println("Server message is not a valid message");
             }
             else {
-                System.out.println("An error occurs");
+                //System.out.println("An error occurs");
+                System.out.println("You exit the game correctly");
                 return ;
             }
         }
